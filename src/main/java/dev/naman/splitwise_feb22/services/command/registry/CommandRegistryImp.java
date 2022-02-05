@@ -26,3 +26,5 @@ public class CommandRegistryImp implements CommandRegistry {
         }
     }
 }
+
+// serializable
