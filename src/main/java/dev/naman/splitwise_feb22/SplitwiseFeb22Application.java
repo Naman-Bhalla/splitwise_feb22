@@ -1,6 +1,7 @@
 package dev.naman.splitwise_feb22;
 
 import dev.naman.splitwise_feb22.services.command.RegisterUserCommand;
+import dev.naman.splitwise_feb22.services.command.SettleUpGroupCommand;
 import dev.naman.splitwise_feb22.services.command.UpdateProfileCommand;
 import dev.naman.splitwise_feb22.services.command.registry.CommandRegistry;
 import dev.naman.splitwise_feb22.services.command.registry.CommandRegistryImp;
@@ -22,6 +23,9 @@ public class SplitwiseFeb22Application implements CommandLineRunner {
     private UpdateProfileCommand updateProfileCommand;
 
     @Autowired
+    private SettleUpGroupCommand settleUpGroupCommand;
+
+    @Autowired
     private CommandRegistry commandRegistry;
 
     public static void main(String[] args) {
@@ -32,6 +36,7 @@ public class SplitwiseFeb22Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         commandRegistry.registerCommand(registerUserCommand);
         commandRegistry.registerCommand(updateProfileCommand);
+        commandRegistry.registerCommand(settleUpGroupCommand);
 
         String input = "Register vinsmokesanji 003 namisswwaann";// read from command line
 
